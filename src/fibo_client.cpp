@@ -20,7 +20,7 @@ int main(int argc, char **argv){
    
    std::cout<<"Insert the index:";
 
-
+// check if the input is valid
   do {
    
     while (true) {
@@ -31,11 +31,14 @@ int main(int argc, char **argv){
        cout << "Invalid number, please try again" << endl;
    }
    if(ind < 0) cout << "The index you entered is negative. Please enter a positive number to continue.\n";
+  
   }while(ind<0);
 
 
 
    std::cout<<"Insert the length:";
+
+//check if the input isa valid
     do {
    
     while (true) {
@@ -46,6 +49,7 @@ int main(int argc, char **argv){
        cout << "Invalid number, please try again" << endl;
    }
    if(leng < 0) cout << "The length you entered is negative. Please enter a positive number to continue.\n";
+  
   }while(leng<0);
 
    srv.request.index =ind;
