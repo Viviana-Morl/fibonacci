@@ -14,15 +14,39 @@ int main(int argc, char **argv){
  
  while(ros::ok()) {
    ros_fibonacci::fibo_service srv;
+   
    int ind, leng;
+   std::string input ;
+   
    std::cout<<"Insert the index:";
-   std::cin>>ind;
-   std::cout<<endl;
+
+
+  do {
+   
+    while (true) {
+       getline(cin, input);
+       stringstream myStream(input);
+       if (myStream >> ind)
+          break;
+       cout << "Invalid number, please try again" << endl;
+   }
+   if(ind < 0) cout << "The index you entered is negative. Please enter a positive number to continue.\n";
+  }while(ind<0);
+
 
 
    std::cout<<"Insert the length:";
-   std::cin>>leng;
-   std::cout<<endl;
+    do {
+   
+    while (true) {
+       getline(cin, input);
+       stringstream myStream(input);
+       if (myStream >> leng)
+          break;
+       cout << "Invalid number, please try again" << endl;
+   }
+   if(leng < 0) cout << "The length you entered is negative. Please enter a positive number to continue.\n";
+  }while(leng<0);
 
    srv.request.index =ind;
    srv.request.length =leng;
